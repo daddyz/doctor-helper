@@ -1,0 +1,17 @@
+- content_for :devise_header do
+  | Log in
+- content_for :devise_body do
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-group
+      = f.label :email
+      = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'email@example.com'
+    .form-group
+      = f.label :password
+      = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: '1@a2!d3#f'
+    - if devise_mapping.rememberable?
+      .checkbox
+        = f.label :remember_me do
+          = f.check_box :remember_me
+          | Remember me
+
+    = f.submit "Log in", class: 'btn btn-primary'
