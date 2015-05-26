@@ -1,0 +1,10 @@
+- content_for :page_header do
+  | Results for ##{@survey.queue_number} taken on #{@survey.created_at}
+
+ol
+  - @survey.result_data.each do |question, answer|
+    li
+      b= question
+      br
+      = answer
+

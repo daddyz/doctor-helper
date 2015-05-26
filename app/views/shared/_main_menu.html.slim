@@ -10,13 +10,15 @@ nav.navbar.navbar-fixed-top.navbar-default
 
     .collapse.navbar-collapse#navbar-collapse
       ul.nav.navbar-nav
-        li= link_to 'DoctorsHelper', root_path
-        li.dropdown
-          a.dropdown-toggle{ href="#" data-toggle="dropdown" role="button" aria-expanded="false" }
-            'Main Menu
-            span.caret
-          ul.dropdown-menu{ role="menu" }
-            li= link_to 'Dashboard', home_dashboard_path
+        - if doctor_signed_in?
+          li= link_to 'Dashboard', home_dashboard_path
+          - if false
+            li.dropdown
+              a.dropdown-toggle{ href="#" data-toggle="dropdown" role="button" aria-expanded="false" }
+                'Main Menu
+                span.caret
+              ul.dropdown-menu{ role="menu" }
+                li= link_to 'Dashboard', home_dashboard_path
 
       ul.nav.navbar-nav.navbar-right
         li.dropdown
@@ -28,6 +30,7 @@ nav.navbar.navbar-fixed-top.navbar-default
             span.caret
           ul.dropdown-menu{ role="menu" }
             - if doctor_signed_in?
+              li= link_to 'Edit Profile', edit_registration_path(current_doctor)
               li= link_to 'Log Out', destroy_session_path(current_doctor), method: :delete
             - else
               li= link_to 'Log In', new_doctor_session_path

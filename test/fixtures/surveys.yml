@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  doctor_id: 1
+  queue_number: 1
+  result: MyText
+  shown: false
+
+two:
+  doctor_id: 1
+  queue_number: 1
+  result: MyText
+  shown: false

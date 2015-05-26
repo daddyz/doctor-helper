@@ -20,7 +20,7 @@ html
       .page-header
         h3= yield :page_header
 
-    - if devise_controller?
+    - if devise_controller? && !doctor_signed_in?
       .container
         .col-md-4.col-md-offset-4
           .panel.panel-default

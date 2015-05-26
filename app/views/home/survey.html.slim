@@ -1,0 +1,64 @@
+- content_for :page_header do
+  = "Welcome to Doctor \"#{@doctor.to_s}\" Survey"
+
+.row-fluid
+  ol#survey
+    - @questions.each do |question|
+      li
+        = question[:q]
+        ul.list-unstyled
+          - question[:answers].each do |aid, answer|
+            li
+              label
+                = radio_button_tag "a_#{question[:id]}", aid, aid == session[:survey]['answers'][question[:id]], readonly: true, disabled: true
+                = answer
+  .well.hide#thankYou
+    | Thank you for your survey! Doctor will be able to see your answers
+
+javascript:
+  var scrollTo = function(hash) {
+    location.hash = "#" + hash;
+  };
+  var radioClick = function() {
+    var name = $(this).attr('name'),
+        q = $(this).attr('data-question'),
+        a = $(this).val();
+    $('input[name=' + name + ']').attr('readonly', 'readonly').attr('disabled', 'disabled');
+    process(q, a);
+  };
+  var process = function(question_id, answer_id) {
+    if (typeof question_id == 'undefined') {
+      question_id = 0;
+    }
+    if (typeof answer_id == 'undefined') {
+      answer_id = 0;
+    }
+    $.getJSON(
+      '#{home_survey_step_path}?q=' + question_id + '&a=' + answer_id,
+      function (data) {
+        if (typeof data['id'] == 'undefined') {
+          $('#thankYou').removeClass('hide');
+          scrollTo('thankYou');
+          return;
+        }
+        var q_li = $('<li id="q_li_' + data['id'] + '">'),
+            a_ul = $('<ul>').addClass('list-unstyled');
+        q_li.append(data['q']);
+        for (var aid in data['answers']) {
+          var a_li = $('<li>'),
+              a = $('<label>'),
+              a_radio = $('<input type="radio" data-question="' + data['id'] + '" name="a_' + data['id'] + '" value="' + aid + '"/>');
+          a_radio.click(radioClick);
+          a.append(a_radio).append(data['answers'][aid]);
+          a_li.append(a);
+          a_ul.append(a_li);
+        }
+        q_li.append(a_ul);
+        $('#survey').append(q_li);
+        scrollTo('q_li_' + data['id']);
+      }
+    );
+  };
+  $(document).ready(function() {
+    process();
+  });

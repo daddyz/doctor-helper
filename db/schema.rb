@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513162552) do
+ActiveRecord::Schema.define(version: 20150520160140) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,6 +46,24 @@ ActiveRecord::Schema.define(version: 20150513162552) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
+  create_table "answer_followups", force: true do |t|
+    t.integer  "answer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "answer_followups_questions", id: false, force: true do |t|
+    t.integer "answer_followup_id"
+    t.integer "question_id"
+  end
+
+  create_table "answers", force: true do |t|
+    t.text     "body"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "doctors", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -68,10 +86,26 @@ ActiveRecord::Schema.define(version: 20150513162552) do
     t.datetime "locked_at"
     t.string   "first_name"
     t.string   "last_name"
+    t.integer  "initial_question_id"
   end
 
   add_index "doctors", ["confirmation_token"], name: "index_doctors_on_confirmation_token", unique: true
   add_index "doctors", ["email"], name: "index_doctors_on_email", unique: true
   add_index "doctors", ["reset_password_token"], name: "index_doctors_on_reset_password_token", unique: true
+
+  create_table "questions", force: true do |t|
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "surveys", force: true do |t|
+    t.integer  "doctor_id"
+    t.integer  "queue_number"
+    t.text     "result"
+    t.boolean  "shown",        default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

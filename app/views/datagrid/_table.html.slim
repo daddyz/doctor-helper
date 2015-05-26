@@ -1,0 +1,10 @@
+= content_tag :table, options[:html].merge({class: 'table table-bordered table-stripped' }) do
+  thead
+    = datagrid_header(grid, options)
+  tbody
+    - if assets.any?
+      = datagrid_rows(grid, assets, options)
+    - else
+      tr
+        td.noresults[ colspan="100%" ]
+          = I18n.t('datagrid.no_results').html_safe

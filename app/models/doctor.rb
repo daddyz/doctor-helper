@@ -5,6 +5,8 @@ class Doctor < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable
 
+  has_many :surveys
+
   validates :first_name, :last_name, presence: true
 
   def to_s
