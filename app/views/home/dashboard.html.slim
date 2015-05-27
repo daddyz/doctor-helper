@@ -2,4 +2,13 @@
   | Dashboard
 
 .container-fluid
+  .well
+    | Here is some information how your patients can access the application.
+    | You short URL is
+    span.badge short
+    | . Your doctor number is
+    span.badge= current_doctor.id
+    | .
+
+.container-fluid
   = datagrid_table(@surveys)
