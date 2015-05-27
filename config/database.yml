@@ -14,3 +14,11 @@ test: &test
   <<: *defaults
   database: userportal_test
 
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: d22ftva7u9bm8i
+  pool: 5
+  username: sfmlywuuhenoff
+  password: d46jn3vyhnzRAK_xhaUkUzt-W4
+  host: ec2-54-217-202-108.eu-west-1.compute.amazonaws.com
