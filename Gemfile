@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -48,3 +47,4 @@ gem 'activeadmin', github: 'activeadmin'
 #gem "meta_search", '>= 1.1.0.pre'
 gem 'slim'
 gem 'datagrid'
+gem 'googl'

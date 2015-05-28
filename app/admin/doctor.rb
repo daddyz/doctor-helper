@@ -29,6 +29,15 @@ ActiveAdmin.register Doctor do
 
     f.actions
   end
+
+  action_item only: :show do
+    link_to 'Regenerate Short URL', regenerate_short_url_admin_doctor_path(doctor)
+  end
+
+  member_action :regenerate_short_url do
+    Doctor.find(params[:id]).regenerate_short_url
+    redirect_to admin_doctor_path(params[:id]), notice: 'URL regenerated'
+  end
 #
 # or
 #

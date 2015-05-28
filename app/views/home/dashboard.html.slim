@@ -5,7 +5,7 @@
   .well
     | Here is some information how your patients can access the application.
     | You short URL is
-    span.badge short
+    span.badge= current_doctor.short_url
     | . Your doctor number is
     span.badge= current_doctor.id
     | .
