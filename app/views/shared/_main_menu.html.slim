@@ -1,4 +1,4 @@
-nav.navbar.navbar-fixed-top.navbar-default
+nav.navbar.navbar-fixed-top.navbar-default.hidden-print
   .container-fluid
     .navbar-header
       button.navbar-toggle.collapsed{ type="button" data-toggle="collapse" data-target="#navbar-collapse" }
@@ -31,6 +31,7 @@ nav.navbar.navbar-fixed-top.navbar-default
           ul.dropdown-menu{ role="menu" }
             - if doctor_signed_in?
               li= link_to 'Edit Profile', edit_registration_path(current_doctor)
+              li= link_to 'Patient Instructions', home_instructions_path, target: '_blank'
               li= link_to 'Log Out', destroy_session_path(current_doctor), method: :delete
             - else
               li= link_to 'Log In', new_doctor_session_path

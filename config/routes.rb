@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   authenticate(:doctor) do
     get 'home/dashboard'
+    get 'home/instructions'
     resources :surveys, only: [:show, :index, :destroy]
   end
 end

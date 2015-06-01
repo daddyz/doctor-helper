@@ -8,6 +8,9 @@ class HomeController < ApplicationController
     @surveys = SurveysGrid.new({current_doctor: current_doctor, shown: false})
   end
 
+  def instructions
+  end
+
   def survey
     @questions = Question.where(id: session[:survey]['answers'].keys).
         map(&:with_answers)

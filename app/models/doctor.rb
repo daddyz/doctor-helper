@@ -10,6 +10,7 @@ class Doctor < ActiveRecord::Base
   validates :first_name, :last_name, presence: true
 
   after_create :generate_short_url
+  after_create :generate_qr_code
 
   def to_s
     [first_name, last_name].join(' ')
@@ -19,11 +20,25 @@ class Doctor < ActiveRecord::Base
     generate_short_url
   end
 
+  def direct_url
+    "https://doctorq.herokuapp.com/home/init?doc=#{self.id}"
+  end
+
   private
+
+  def generate_qr_code
+    require 'rqrcode_png'
+
+    qr = RQRCode::QRCode.new(self.direct_url, size: 6, level: :h)
+    png = qr.to_img
+    png.resize(150, 150).save(
+      Rails.root.join('public', 'qrcodes', "doc#{self.id}.png")
+    )
+  end
 
   def generate_short_url
     url = Googl.shorten(
-        "https://doctorq.herokuapp.com/home/init?doc=1",
+        self.direct_url,
         '8.8.8.8',
         'AIzaSyBsbvtt9wI2JNPW7IW-rg6ht0wVoLrWPsM')
     self.short_url = url.short_url
