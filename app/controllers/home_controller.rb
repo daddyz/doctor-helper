@@ -11,6 +11,15 @@ class HomeController < ApplicationController
   def instructions
   end
 
+  def qr_code
+    respond_to do |format|
+      format.png do
+        send_data current_doctor.qr_code, type: 'image/png',
+                  filename: 'qr_code.pnh', disposition: 'inline'
+      end
+    end
+  end
+
   def survey
     @questions = Question.where(id: session[:survey]['answers'].keys).
         map(&:with_answers)

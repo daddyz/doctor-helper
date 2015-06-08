@@ -7,7 +7,7 @@
   h3= t('views.home.instructions.enter_to_site_using_one_of_options')
   h4= t('views.home.instructions.scan_qr_code')
   div.center-block
-    = image_tag "/qrcodes/doc#{current_doctor.id}.png"
+    = image_tag home_qr_code_path(format: :png)
   h4
     = t('views.home.instructions.or_use_direct_url_html', {short_url: current_doctor.short_url})
   h4

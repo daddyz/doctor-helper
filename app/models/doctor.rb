@@ -31,9 +31,7 @@ class Doctor < ActiveRecord::Base
 
     qr = RQRCode::QRCode.new(self.direct_url, size: 6, level: :h)
     png = qr.to_img
-    png.resize(150, 150).save(
-      Rails.root.join('public', 'qrcodes', "doc#{self.id}.png")
-    )
+    self.update_attribute :qr_code, png.resize(150, 150).to_string
   end
 
   def generate_short_url
