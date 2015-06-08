@@ -16,6 +16,10 @@ class Survey < ActiveRecord::Base
     )
   end
 
+  def red_alert?
+    Answer.where(id: result.values).where(red_alert: true).present?
+  end
+
   def result_data
     Hash[result.map { |q, a| [ Question.find(q).to_s, Answer.find(a).to_s ] }]
   end

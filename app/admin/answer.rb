@@ -1,11 +1,12 @@
 ActiveAdmin.register Answer do
 
-  permit_params :question_id, :body
+  permit_params :question_id, :body, :red_alert
 
   form do |f|
     f.inputs 'Answer' do
       f.input :question, include_blank: false
       f.input :body
+      f.input :red_alert
     end
     f.actions
   end
@@ -23,6 +24,7 @@ ActiveAdmin.register Answer do
         end.join('<br>').html_safe
       end
     end
+    column :red_alert
 
     actions
   end

@@ -8,3 +8,5 @@ ol
       br
       = answer
 
+.container-fluid
+  = link_to t('views.surveys.show.destroy_link'), survey_path(@survey), data: { confirm: t('views.surveys.show.destroy_link_confirmation') }, method: :delete, class: 'btn btn-danger'

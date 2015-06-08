@@ -26,6 +26,8 @@ ru:
     sign_up: Sign Up
   grids:
     surveys:
+      new_survey_tag: new
+      alert_survey_tag: alert
       columns:
         queue_number: Queue Number
         created_at: Taken At
@@ -48,6 +50,8 @@ ru:
     surveys:
       show:
         header: 'Results for #%{queue_number} taken on %{created_at}'
+        destroy_link: Delete Survey
+        destroy_link_confirmation: Are you sure?
     home:
       dashboard:
         header: Dashboard
