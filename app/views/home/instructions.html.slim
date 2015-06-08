@@ -1,34 +1,20 @@
 .container
-  h1 How to take a DoctorQ Survey!
-  h4
-    | This will help #{current_doctor.to_s} to examine you faster. Saves queue waiting time.
-    | Simply follow the instructions below:
+  h1= t('views.home.instructions.how_to_take_survey')
+  h4= t('views.home.instructions.survey_explanation', {name: current_doctor.to_s})
 
 .container
-  h2 Step 1.
-  h3 Enter DoctorQ Site using one of the options:
-  h4 Scan QR Code
+  h2= t('views.home.instructions.step_1')
+  h3= t('views.home.instructions.enter_to_site_using_one_of_options')
+  h4= t('views.home.instructions.scan_qr_code')
   div.center-block
     = image_tag "/qrcodes/doc#{current_doctor.id}.png"
   h4
-    ' Or use direct short URL:
-    mark
-      b= current_doctor.short_url
+    = t('views.home.instructions.or_use_direct_url_html', {short_url: current_doctor.short_url})
   h4
-    ' Or enter our website by using this link
-    mark
-      b http://doctorq.herokuapp.com
-    ' and use
-    mark
-      b= current_doctor.id
-    ' as your Doctor Number
+    = t('views.home.instructions.or_enter_using_link_html', {doctor_id: current_doctor.id})
 .container
-  h2 Step 2
-  h3 Enter your Queue Number
+  h2= t('views.home.instructions.step_2')
+  h3= t('views.home.instructions.enter_queue_number')
 .container
-  h2 Step 3
-  h3
-    ' And press
-    mark
-      b Start Survey
-    ' button
+  h2= t('views.home.instructions.step_3')
+  h3= t('views.home.instructions.and_press_start_survey_html')

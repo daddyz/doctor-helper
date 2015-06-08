@@ -32,7 +32,7 @@ class HomeController < ApplicationController
   def init
     @doctor = Doctor.where(id: params[:doc]).first
     if @doctor.nil?
-      redirect_to root_path, alert: 'Wrong URL specified'
+      redirect_to root_path, alert: t('controllers.home.init.wrong_url_specified')
       return
     end
     if params[:q]

@@ -11,7 +11,7 @@ nav.navbar.navbar-fixed-top.navbar-default.hidden-print
     .collapse.navbar-collapse#navbar-collapse
       ul.nav.navbar-nav
         - if doctor_signed_in?
-          li= link_to 'Dashboard', home_dashboard_path
+          li= link_to t('menu.dashboard'), home_dashboard_path
           - if false
             li.dropdown
               a.dropdown-toggle{ href="#" data-toggle="dropdown" role="button" aria-expanded="false" }
@@ -23,7 +23,7 @@ nav.navbar.navbar-fixed-top.navbar-default.hidden-print
       ul{ class="nav navbar-nav navbar-#{right_left}" }
         li.dropdown
           a.dropdown-toggle{ href="#" data-toggle="dropdown" role="button" aria-expanded="false" }
-            = "Language: #{available_locales[I18n.locale]}"
+            = "#{t('menu.language')}: #{available_locales[I18n.locale]}"
             span.caret
           ul.dropdown-menu{ role="menu" }
             - available_locales.each do |locale, name|
@@ -31,16 +31,16 @@ nav.navbar.navbar-fixed-top.navbar-default.hidden-print
         li.dropdown
           a.dropdown-toggle{ href="#" data-toggle="dropdown" role="button" aria-expanded="false" }
             - if doctor_signed_in?
-              = "Logged in as #{current_doctor}"
+              = t('menu.logged_in_as', {name: current_doctor.to_s})
             - else
-              'Please, Log in!
+              = t('menu.please_log_in')
             span.caret
           ul.dropdown-menu{ role="menu" }
             - if doctor_signed_in?
-              li= link_to 'Edit Profile', edit_registration_path(current_doctor)
-              li= link_to 'Patient Instructions', home_instructions_path, target: '_blank'
-              li= link_to 'Log Out', destroy_session_path(current_doctor), method: :delete
+              li= link_to t('menu.edit_profile'), edit_registration_path(current_doctor)
+              li= link_to t('menu.patient_instructions'), home_instructions_path, target: '_blank'
+              li= link_to t('menu.log_out'), destroy_session_path(current_doctor), method: :delete
             - else
-              li= link_to 'Log In', new_doctor_session_path
+              li= link_to t('menu.log_in'), new_doctor_session_path
               li.divider
-              li= link_to 'Register', new_doctor_registration_path
+              li= link_to t('menu.sign_up'), new_doctor_registration_path

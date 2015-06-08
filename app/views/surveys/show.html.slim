@@ -1,5 +1,5 @@
 - content_for :page_header do
-  | Results for ##{@survey.queue_number} taken on #{@survey.created_at}
+  = t('views.surveys.show.header', {queue_number: @survey.queue_number, created_at: @survey.created_at})
 
 ol
   - @survey.result_data.each do |question, answer|

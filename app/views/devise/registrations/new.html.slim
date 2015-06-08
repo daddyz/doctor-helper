@@ -1,5 +1,5 @@
 - content_for :devise_header do
-  | Sign up
+  = t('views.devise.registrations.new.header')
 - content_for :devise_body do
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = devise_error_messages!
@@ -17,10 +17,9 @@
       = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: '1@a2!d3#f'
       - if @validatable
         p.help-block
-          = @minimum_password_length
-          |  characters minimum
+          = t('views.devise.registrations.new.form.password_min_characters', { min_characters: @minimum_password_length })
 
     .form-group
       = f.label :password_confirmation
       = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: '1@a2!d3#f'
-    = f.submit "Sign up", class: 'btn btn-primary'
+    = f.submit t('views.devise.registrations.new.form.submit'), class: 'btn btn-primary'

@@ -2,7 +2,7 @@ doctype html
 html
   head
     title
-      | DoctorHelper
+      = "#{yield(:page_header)} | DoctorHelper"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     - if I18n.locale == :he

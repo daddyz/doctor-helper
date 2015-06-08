@@ -10,7 +10,7 @@ class RegistrationsController < Devise::RegistrationsController
                current_doctor.update_without_password(data)
              end
     if result
-      redirect_to home_dashboard_path, notice: 'Profile updated!'
+      redirect_to home_dashboard_path, notice: t('controllers.registrations.update.profile_updated')
     else
       render :edit
     end

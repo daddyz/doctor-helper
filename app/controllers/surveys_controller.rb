@@ -10,6 +10,6 @@ class SurveysController < ApplicationController
   def destroy
     survey = current_doctor.surveys.find params[:id]
     survey.destroy
-    redirect_to home_dashboard_path, notice: 'Survey deleted!'
+    redirect_to home_dashboard_path, notice: t('controllers.surveys.destroy.survey_deleted')
   end
 end

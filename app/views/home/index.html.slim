@@ -1,16 +1,16 @@
 - content_for :page_header do
-  | Welcome to Dr. Helper
+  = t('views.home.index.header')
 
 = form_tag home_init_path, method: :get do
   .container-fluid
     .col-md-4.col-md-offset-3
       h3
-        p Please enter your Doctor Number:
+        p= t('views.home.index.form.enter_doctor_number')
       .controls
         = number_field_tag :doc, '', min: 1, class: 'form-control input-lg'
       h3
-        p Please enter your Queue Number:
+        p= t('views.home.index.form.enter_queue_number')
       .controls
         = number_field_tag :q, '', min: 1, class: 'form-control input-lg'
       br
-      = submit_tag 'Take Survey', class: 'btn btn-lg btn-primary'
+      = submit_tag t('views.home.index.form.submit'), class: 'btn btn-lg btn-primary'

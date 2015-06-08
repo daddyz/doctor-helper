@@ -1,11 +1,11 @@
 - content_for :page_header do
-  | You are going to take survey for Dr. #{@doctor.to_s}
+  = t('views.home.init.header', {name: @doctor.to_s})
 .container-fluid
   h3
-    p Please enter your Queue Number:
+    p= t('views.home.init.form.enter_queue_number')
   = form_tag home_init_path, method: :get, class: 'form-inline' do
     = hidden_field_tag :doc, @doctor.id
     .input-group
       = number_field_tag :q, '', min: 1, class: 'form-control input-lg'
       span.input-group-btn
-        = submit_tag 'Take Survey', class: 'btn btn-lg btn-primary'
+        = submit_tag t('views.home.init.form.submit'), class: 'btn btn-lg btn-primary'

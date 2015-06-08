@@ -1,14 +1,5 @@
 - content_for :page_header do
-  | Dashboard
-
-.container-fluid
-  .well
-    | Here is some information how your patients can access the application.
-    | You short URL is
-    span.badge= current_doctor.short_url
-    | . Your doctor number is
-    span.badge= current_doctor.id
-    | .
+  = t('views.home.dashboard.header')
 
 .container-fluid
   = datagrid_table(@surveys)

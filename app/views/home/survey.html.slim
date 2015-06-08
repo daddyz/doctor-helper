@@ -1,5 +1,5 @@
 - content_for :page_header do
-  = "Welcome to Doctor \"#{@doctor.to_s}\" Survey"
+  = t('views.home.survey.header', {name: @doctor.to_s})
 
 .row-fluid
   ol#survey
@@ -13,7 +13,7 @@
                 = radio_button_tag "a_#{question[:id]}", aid, aid == session[:survey]['answers'][question[:id]], readonly: true, disabled: true
                 = answer
   .well.hide#thankYou
-    | Thank you for your survey! Doctor will be able to see your answers
+    = t('views.home.survey.thank_you_for_survey')
 
 javascript:
   var scrollTo = function(hash) {

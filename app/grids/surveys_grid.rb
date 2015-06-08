@@ -10,12 +10,12 @@ class SurveysGrid
   column '', html: true do |survey|
     content_tag(:span, 'new', class: 'label label-success') unless survey.shown?
   end
-  column :queue_number
-  column :created_at
-  column :actions, html: true do |survey|
+  column :queue_number, header: I18n.t('grids.surveys.columns.queue_number')
+  column :created_at, header: I18n.t('grids.surveys.columns.created_at')
+  column :actions, header: I18n.t('grids.surveys.columns.actions'), html: true do |survey|
     [
-      link_to('View Survey', survey_path(survey), class: 'btn btn-sm btn-default'),
-      link_to('Delete Survey', survey_path(survey), confirm: 'Are you sure?', class: 'btn btn-sm btn-danger', method: :delete),
+      link_to(I18n.t('grids.surveys.links.view_survey'), survey_path(survey), class: 'btn btn-sm btn-default'),
+      link_to(I18n.t('grids.surveys.links.delete_survey'), survey_path(survey), confirm: I18n.t('grids.surveys.links.are_you_sure'), class: 'btn btn-sm btn-danger', method: :delete),
     ].join(' ').html_safe
   end
 

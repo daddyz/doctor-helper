@@ -1,5 +1,5 @@
 - content_for :devise_header do
-  | Log in
+  = t('views.devise.sessions.new.header')
 - content_for :devise_body do
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .form-group
@@ -12,6 +12,6 @@
       .checkbox
         = f.label :remember_me do
           = f.check_box :remember_me
-          | Remember me
+          = t('views.devise.sessions.new.form.remember_me')
 
-    = f.submit "Log in", class: 'btn btn-primary'
+    = f.submit t('views.devise.sessions.new.form.submit'), class: 'btn btn-primary'
