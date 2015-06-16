@@ -1,6 +1,6 @@
 ActiveAdmin.register Question do
 
-  permit_params :body
+  permit_params :body_en, :body_ru, :body_he
 
   action_item only: :show do
     link_to 'Add Answer', new_admin_answer_path(answer: { question_id: resource.id })

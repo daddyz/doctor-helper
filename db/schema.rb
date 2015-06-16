@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608155530) do
+ActiveRecord::Schema.define(version: 20150616154301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,11 +61,13 @@ ActiveRecord::Schema.define(version: 20150608155530) do
   end
 
   create_table "answers", force: true do |t|
-    t.text     "body"
+    t.text     "body_en"
     t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "red_alert",   default: false
+    t.text     "body_ru"
+    t.text     "body_he"
   end
 
   create_table "doctors", force: true do |t|
@@ -100,9 +102,11 @@ ActiveRecord::Schema.define(version: 20150608155530) do
   add_index "doctors", ["reset_password_token"], name: "index_doctors_on_reset_password_token", unique: true, using: :btree
 
   create_table "questions", force: true do |t|
-    t.text     "body"
+    t.text     "body_en"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "body_ru"
+    t.text     "body_he"
   end
 
   create_table "surveys", force: true do |t|

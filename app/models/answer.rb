@@ -7,4 +7,9 @@ class Answer < ActiveRecord::Base
   def to_s
     body
   end
+
+  def body
+    text = send("body_#{I18n.locale}")
+    text.empty? ? body_en : text
+  end
 end

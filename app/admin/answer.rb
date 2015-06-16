@@ -1,11 +1,13 @@
 ActiveAdmin.register Answer do
 
-  permit_params :question_id, :body, :red_alert
+  permit_params :question_id, :body_en, :body_ru, :body_he, :red_alert
 
   form do |f|
     f.inputs 'Answer' do
       f.input :question, include_blank: false
-      f.input :body
+      f.input :body_en
+      f.input :body_ru
+      f.input :body_he
       f.input :red_alert
     end
     f.actions
