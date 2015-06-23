@@ -2,9 +2,14 @@ class SurveysController < ApplicationController
   def index
   end
 
+  def notifiable
+    render json: Survey.notifications_for_doctor(current_doctor.id,
+                                                 params[:update] == 'true')
+  end
+
   def show
     @survey = Survey.find params[:id]
-    @survey.update_attribute(:shown, true)
+    @survey.update_attributes(shown: true, notified: true)
   end
 
   def destroy

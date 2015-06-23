@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/seyhunak/twitter-bootstrap-rails.git
-  revision: c5297b18b8f37afe33d764eb5201c8ddc5902995
+  revision: 935f53bb55ef736260fa2ef04e29da2fc3fb2b3f
   specs:
     twitter-bootstrap-rails (3.2.1)
       actionpack (>= 3.1)
@@ -110,7 +110,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (5.0.3)
       railties (>= 3.2.16)
-    json (1.8.2)
+    json (1.8.3)
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -126,15 +126,15 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    minitest (5.6.1)
-    multi_json (1.11.0)
+    minitest (5.7.0)
+    multi_json (1.11.1)
     multi_xml (0.5.5)
     orm_adapter (0.5.0)
     pg (0.14.1)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
     polyglot (0.3.5)
-    rack (1.5.3)
+    rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.1.4)

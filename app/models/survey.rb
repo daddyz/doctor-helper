@@ -5,6 +5,7 @@ class Survey < ActiveRecord::Base
   belongs_to :doctor
 
   scope :unshown, ->{ where(shown: false) }
+  scope :for_notification, ->{ where(notified: false) }
 
   default_scope ->{ order('shown ASC, created_at ASC') }
 
@@ -14,6 +15,18 @@ class Survey < ActiveRecord::Base
       queue_number: params['queue'],
       result: params['answers']
     )
+  end
+
+  def self.notifications_for_doctor(doctor_id, with_update = false)
+    notifications = Doctor.find(doctor_id).surveys.for_notification
+    notifications.update_all(notified: true) if with_update
+    notifications.map {|s| s.to_s }
+  end
+
+  def to_s
+    I18n.t('models.surveys.taken_at', { number: queue_number,
+                                        time: created_at.strftime('%H:%M'),
+                                        date: created_at.strftime('%d.%m')})
   end
 
   def red_alert?

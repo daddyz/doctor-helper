@@ -16,6 +16,10 @@ Rails.application.routes.draw do
     get 'home/dashboard'
     get 'home/instructions'
     get 'home/qr_code'
-    resources :surveys, only: [:show, :index, :destroy]
+    resources :surveys, only: [:show, :index, :destroy] do
+      collection do
+        get 'notifiable'
+      end
+    end
   end
 end

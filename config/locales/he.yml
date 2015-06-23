@@ -14,6 +14,9 @@ he:
         current_password: Current Password
         password: Password
         password_confirmation: Password Confirmation
+  models:
+    surveys:
+      taken_at: '#%{number} taken at %{time} on %{date}'
   menu:
     dashboard: Dashboard
     language: Language
@@ -24,6 +27,9 @@ he:
     log_out: Log Out
     log_in: Log In
     sign_up: Sign Up
+    notifications:
+      title: Notifications
+      no_messages: No New Notifications
   grids:
     surveys:
       new_survey_tag: new
