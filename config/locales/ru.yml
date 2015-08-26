@@ -2,148 +2,148 @@
 ru:
   datagrid:
     form:
-      search: Filter
-      reset: Clear Filter
-    no_results: Nothing Found
+      search: Фильтр
+      reset: Очистить фильтр
+    no_results: Ничего не найдено
   activerecord:
     attributes:
       doctor:
-        email: Email
-        first_name: First Name
-        last_name: Last Name
-        current_password: Current Password
-        password: Password
-        password_confirmation: Password Confirmation
+        email: Электронная почта
+        first_name: Имя
+        last_name: Фамилия
+        current_password: Текущий пароль
+        password: Пароль
+        password_confirmation: Подтверждение пароля
   models:
     surveys:
-      taken_at: '#%{number} taken at %{time} on %{date}'
+      taken_at: '#%{number} пройденный в %{time} %{date}'
   menu:
-    dashboard: Dashboard
-    language: Language
-    logged_in_as: Logged in as %{name}
-    please_log_in: Please, Log in
-    edit_profile: Edit Profile
-    patient_instructions: Patient instructions
-    log_out: Log Out
-    log_in: Log In
-    sign_up: Sign Up
+    dashboard: Панель
+    language: Язык
+    logged_in_as: В системе как %{name}
+    please_log_in: Пожалуйста, зайдите
+    edit_profile: Редактировать профиль
+    patient_instructions: Инструкции для Пациентов
+    log_out: Выйти из системы
+    log_in: Зайти в систему
+    sign_up: Зарегистрироваться
     notifications:
-      title: Notifications
-      no_messages: No New Notifications
+      title: Сообщения
+      no_messages: Нет новых сообщений
   grids:
     surveys:
-      new_survey_tag: new
-      alert_survey_tag: alert
+      new_survey_tag: новый
+      alert_survey_tag: тревога
       columns:
-        queue_number: Queue Number
-        created_at: Taken At
-        actions: Actions
+        queue_number: Номер очереди
+        created_at: Пройден в
+        actions: Действия
       links:
-        view_survey: View Survey
-        delete_survey: Delete Survey
-        are_you_sure: Are you sure?
+        view_survey: Просмотреть
+        delete_survey: Удалить
+        are_you_sure: Вы уверены?
   controllers:
     home:
       init:
-        wrong_url_specified: Wrong URL Specified!
+        wrong_url_specified: Неправильная ссылка!
     registrations:
       update:
-        profile_updated: Profile Updated!
+        profile_updated: Профиль обновлен!
     surveys:
       destroy:
-        survey_deleted: Survey Deleted!
+        survey_deleted: Удалить вопросник!
   views:
     surveys:
       show:
-        header: 'Results for #%{queue_number} taken on %{created_at}'
-        destroy_link: Delete Survey
-        destroy_link_confirmation: Are you sure?
+        header: 'Результат для номера #%{queue_number} пройден в %{created_at}'
+        destroy_link: Удалить
+        destroy_link_confirmation: Вы уверены что хотите удалить?
     home:
       dashboard:
-        header: Dashboard
+        header: Панель
       index:
-        header: Welcome to Dr. Helper
+        header: Добро пожаловать в Dr. Helper
         form:
-          enter_doctor_number: Please enter your Doctor Number
-          enter_queue_number: Please enter your Queue Number
-          submit: Take Survey
+          enter_doctor_number: Введите номер доктора
+          enter_queue_number: Введите номер очереди
+          submit: Ответить на вопросник
       init:
-        header: You are going to take survey for Dr. %{name}
+        header: Вы собираетесь ответить на вопросник доктора %{name}
         form:
-          enter_queue_number: Please enter your Queue Number
-          submit: Take Survey
+          enter_queue_number: Введите номер очереди
+          submit: Начать
       instructions:
-        how_to_take_survey: How to take a DoctorQ Survey!
+        how_to_take_survey: Как заполнить вопросник DoctorQ!
         survey_explanation: |
-          This will help Dr. %{name} to examine you faster. Saves queue waiting time.
-          Simply follow the instructions below:
-        step_1: Step 1.
-        enter_to_site_using_one_of_options: Enter DoctorQ Site using one of the options
-        scan_qr_code: Scan QR Code
-        or_use_direct_url_html: Or use direct short URL <mark><b>%{short_url}</b></mark>
+          Этот вопросник поможет доктору %{name} проверить Вас быстрее и сократит время ожидания в очереди.
+          Для заполнения вопросника следуйте инструкциям:
+        step_1: Шаг 1.
+        enter_to_site_using_one_of_options: Зайдите на сайт DoctorQ используя одну из следующих опций
+        scan_qr_code: Просканируйте QR Code
+        or_use_direct_url_html: Или используйте этот которкий URL <mark><b>%{short_url}</b></mark>
         or_enter_using_link_html: |
-          Or enter our website by using this link <mark><b>http://doctorq.herokuapp.com</b></mark>
-          and use <mark><b>%{doctor_id}</b></mark> as your Doctor Number
-        step_2: Step 2.
-        enter_queue_number: Enter your Queue Number
-        step_3: Step 3.
-        and_press_start_survey_html: And press <mark><b>Start Survey</b></mark> Button
+          Или зайдите на сайт по этой ссылке <mark><b>http://doctorq.herokuapp.com</b></mark>
+          и используйте <mark><b>%{doctor_id}</b></mark> как номер Вашего доктора
+        step_2: Шаг 2.
+        enter_queue_number: Введите номер очереди
+        step_3: Шаг 3.
+        and_press_start_survey_html: Нажмите на кнопку <mark><b>Начать</b></mark>
       survey:
-        header: Welcome to Doctor "%{name}" Survey
-        thank_you_for_survey: Thank you for your survey! Doctor will be able to see your answers
+        header: Добро пожаловать в вопросник доктора "%{name}"
+        thank_you_for_survey: Спасибо что поучаствовали в вопроснике. Доктор скоро увидет ваши ответы.
     devise:
       confirmations:
         new:
-          header: Resend confirmation instructions
+          header: Выслать заново инструкции по подтверждению
           form:
-            submit: Resend confirmation instructions
+            submit: Выслать заново инструкции по подтверждению
       passwords:
         new:
-          header: Forgot your password?
+          header: Забыли пароль?
           form:
-            submit: Send me reset password instructions
+            submit: Послать инструкции по восстановлению пароля
       registrations:
         edit:
-          header: Edit Profile
+          header: Редактирование профиля
           form:
-            password_help: Leave blank to keep unchanged
-            submit: Save
+            password_help: Оставьте пустым, что бы оставить прежний
+            submit: Сохранить
         new:
-          header: Sign up
+          header: Зарегистрироваться
           form:
-            password_min_characters: '%{min_characters} characters minimum'
-            submit: Sign up
+            password_min_characters: '%{min_characters} минимальная длина'
+            submit: Зарегистрироваться
       sessions:
         new:
-          header: Log in
+          header: Вход в систему
           form:
-            remember_me: Remember me
-            submit: Log In
+            remember_me: Запомнить меня
+            submit: Зайти в систему
       unlocks:
         new:
-          header: Resend unlock instructions
+          header: Выслать заново инструкции по разблокировке
           form:
-            submit: Resend unlock instructions
+            submit: Выслать заново инструкции по разблокировке
       links:
-        log_in: Log In
-        sign_up: Sign Up
-        forgot_password: Forgot Password?
-        didnt_receive_confirmation: Didn't receive confirmation instructions?
-        didnt_receive_unlock: Didn't receive unlock instructions?
+        log_in: Вход в систему
+        sign_up: Регистрация
+        forgot_password: Забыли пароль?
+        didnt_receive_confirmation: Не получили инструкции по подтверждению?
+        didnt_receive_unlock: Не получили инструкции по разблокировке?
 
   mails:
     devise:
-      hello_doctor: Dear Dr. %{name}
+      hello_doctor: Уважаемый доктор %{name}
       confirmation_instructions:
-        welcome: Welcome %{email}!
-        you_can_confirm: You can confirm your account email through the link below
-        confirm_link: Confirm my account
+        welcome: Добро пожаловать %{email}!
+        you_can_confirm: Вы можете подтвердить Ваш адрес следуя по этой ссылке
+        confirm_link: Подтвердить мою учетную запись
       reset_password:
-        someone_has_requested_link_to_change_password: Someone has requested a link to change your password. You can do this through the link below.
-        change_password_link: Change my password
-        if_you_didnt_requested: If you didn't request this, please ignore this email.
-        your_password_wont_change: Your password won't change until you access the link above and create a new one.
+        someone_has_requested_link_to_change_password: Кто-то запросил ссылку для смены пароля. Вы можете это сделать перейдя по этой ссылке.
+        change_password_link: Сменить пароль
+        if_you_didnt_requested: Если это не вы запросили, можете проигнорировать это письмо.
+        your_password_wont_change: Ваш пароль не изменится пока Вы не перейдете по этой ссылке и не измените пароль.
       unlock:
-        your_account_was_locked: Your account has been locked due to an excessive number of unsuccessful sign in attempts.
-        click_link_below_to_unlock: Click the link below to unlock your account
-        unlock_link: Unlock my account
+        your_account_was_locked: Ваша учетная запись заблокирована из-за множественный попыток зайти в систему.
+        click_link_below_to_unlock: Перейдите по этой ссылку что бы разблокировать
+        unlock_link: Разблокировать учетную запись

@@ -1,0 +1,60 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+en:
+  devise:
+    confirmations:
+      confirmed: 'כתובת הדוא"ל שלך אושרה בהצלחה.'
+      send_instructions: 'אתה תקבל הודעת דוא"ל עם הוראות כיצד לאשר את כתובת הדוא"ל שלך בכמה דקות.'
+      send_paranoid_instructions: 'אם כתובת הדוא"ל שלך קיים בבסיס הנתונים שלנו, אתה תקבל הודעת דוא"ל עם הוראות כיצד לאשר את כתובת הדוא"ל שלך בכמה דקות.'
+    failure:
+      already_authenticated: "אתה כבר נכנסת למערכת."
+      inactive: "חשבון שלך לא פעיל עדיין."
+      invalid: "שם משתמש או סיסמא שגויים."
+      locked: "חשבון שלך ננעל."
+      last_attempt: "יש לך עוד ניסיון אחד לפני שהחשבון שלך ינעל."
+      not_found_in_database: "שם משתמש או סיסמא שגויים."
+      timeout: "אתה צריך להיכנס למערכת."
+      unauthenticated: "אתה צריך להיכנס למערכת."
+      unconfirmed: 'נא אשר כתובת הדוא"ל להמשך.'
+    mailer:
+      confirmation_instructions:
+        subject: "הוראות הפעלת חשבון"
+      reset_password_instructions:
+        subject: "הוראות איפוס סיסמא"
+      unlock_instructions:
+        subject: "הוראות שחרור נעילה"
+    omniauth_callbacks:
+      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
+      success: "Successfully authenticated from %{kind} account."
+    passwords:
+      no_token: "אתה לא יכול לגשת לדף זה בלי להגיע מקישור מדואר אלקטרוני לאיפוס סיסמא. אם אתה בא מדואר אלקטרוני לאיפוס סיסמא, אנא ודא השתמש כתובת האתר המלאה שסיפקנו."
+      send_instructions: 'אתה תקבל הודעת דוא"ל עם הוראות כיצד לאפס את הסיסמה שלך בכמה דקות.'
+      send_paranoid_instructions: 'אם כתובת הדוא"ל שלך קיים בבסיס הנתונים שלנו, תקבל קישור לשחזור סיסמא בכתובת הדוא"ל שלך בכמה דקות.'
+      updated: "סיסמא השתנתה בהצלחה."
+      updated_not_active: "סיסמא השתנתה בהצלחה."
+    registrations:
+      destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
+      signed_up: "ברוכים הבאים! אתה נרשמת בהצלחה."
+      signed_up_but_inactive: "אתה נרשמת בהצלחה, רק שחשבון שלך עדיין לא הופעל."
+      signed_up_but_locked: "אתה נרשמת בהצלחה, רק שחשבון שלך נעול."
+      signed_up_but_unconfirmed: 'הודעה עם קישור אישור נשלחה לכתובת הדוא"ל שלך. אנא לחץ על הקישור כדי להפעיל את החשבון שלך.'
+      update_needs_confirmation: 'החשבון שלך עודכן בהצלחה, אבל אנחנו צריכים לאמת את כתובת הדוא"ל החדשה שלך. אנא בדוק את הדוא"ל שלך ולחץ על קישור כדי לאשר את כתובת הדוא"ל החדשה שלך.'
+      updated: "חשבון שלך הודכן בהצלחה."
+    sessions:
+      signed_in: "אתה נכנסת למערכת."
+      signed_out: "יצאת ממערכת."
+      already_signed_out: "יצאת ממערכת."
+    unlocks:
+      send_instructions: 'אתה תקבל הודעת דוא"ל עם הוראות כיצד לשחרר נעילה חשבונך בכמה דקות.'
+      send_paranoid_instructions: 'אם חשבון שלך קיים, אתה תקבל הודעת דוא"ל עם הוראות כיצד לשחרר נעילה חשבונך בכמה דקות.'
+      unlocked: 'חשבון שלך משוחרר מנעילה, אתה יכול להיכנס למערכת'
+  errors:
+    messages:
+      already_confirmed: "חשבון אומת בהצלחה בעבר, כנס למערכת"
+      confirmation_period_expired: "תקופה לאימות פגה, תבקש אימות נוסף"
+      expired: "פג תוקף, תבקש מחדש"
+      not_found: "לא נמצא"
+      not_locked: "לא היה נעול"
+      not_saved:
+        one: "יש לך שגיעה בנתונים:"
+        other: "יש לך שגיעה בנתונים:"

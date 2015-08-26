@@ -2,148 +2,148 @@
 he:
   datagrid:
     form:
-      search: Filter
-      reset: Clear Filter
-    no_results: Nothing Found
+      search: פילטור
+      reset: נקה פילטור
+    no_results: לא נמצא
   activerecord:
     attributes:
       doctor:
-        email: Email
-        first_name: First Name
-        last_name: Last Name
-        current_password: Current Password
-        password: Password
-        password_confirmation: Password Confirmation
+        email: דוא"ל
+        first_name: שם
+        last_name: שם משפחה
+        current_password: סיסמא נוכחית
+        password: סיסמא
+        password_confirmation: אימות סיסמא
   models:
     surveys:
-      taken_at: '#%{number} taken at %{time} on %{date}'
+      taken_at: '#%{number} נרשם ב-%{time} %{date}'
   menu:
-    dashboard: Dashboard
-    language: Language
-    logged_in_as: Logged in as %{name}
-    please_log_in: Please, Log in
-    edit_profile: Edit Profile
-    patient_instructions: Patient instructions
-    log_out: Log Out
-    log_in: Log In
-    sign_up: Sign Up
+    dashboard: לוח
+    language: שפה
+    logged_in_as: נכנס כ-%{name}
+    please_log_in: להיכנס למערכת
+    edit_profile: עריכת פרופיל
+    patient_instructions: הוראות למטופלים
+    log_out: יציאה
+    log_in: כניסה
+    sign_up: הרשמה
     notifications:
-      title: Notifications
-      no_messages: No New Notifications
+      title: הודעות
+      no_messages: אין הודעות חדשות
   grids:
     surveys:
-      new_survey_tag: new
-      alert_survey_tag: alert
+      new_survey_tag: חדש
+      alert_survey_tag: התראה
       columns:
-        queue_number: Queue Number
-        created_at: Taken At
-        actions: Actions
+        queue_number: מספר תור
+        created_at: נרשם ב
+        actions: פעילויות
       links:
-        view_survey: View Survey
-        delete_survey: Delete Survey
-        are_you_sure: Are you sure?
+        view_survey: צפייה
+        delete_survey: מחיקה
+        are_you_sure: אתה בטוח?
   controllers:
     home:
       init:
-        wrong_url_specified: Wrong URL Specified!
+        wrong_url_specified: כתובת שגוייה!
     registrations:
       update:
-        profile_updated: Profile Updated!
+        profile_updated: פרופיל עודכן בהצלחה!
     surveys:
       destroy:
-        survey_deleted: Survey Deleted!
+        survey_deleted: שאלון נמחק!
   views:
     surveys:
       show:
-        header: 'Results for #%{queue_number} taken on %{created_at}'
-        destroy_link: Delete Survey
-        destroy_link_confirmation: Are you sure?
+        header: 'תוצאות עבור מספר תור #%{queue_number} נרשם ב-%{created_at}'
+        destroy_link: למחוק שאלון
+        destroy_link_confirmation: אתה בטוח?
     home:
       dashboard:
-        header: Dashboard
+        header: לוח
       index:
-        header: Welcome to Dr. Helper
+        header: Dr. Helper
         form:
-          enter_doctor_number: Please enter your Doctor Number
-          enter_queue_number: Please enter your Queue Number
-          submit: Take Survey
+          enter_doctor_number: הכנס מספר רופא
+          enter_queue_number: הכנס מספר תור
+          submit: התחל שאלון
       init:
-        header: You are going to take survey for Dr. %{name}
+        header: אתה עונה לשאלון של רופא %{name}
         form:
-          enter_queue_number: Please enter your Queue Number
-          submit: Take Survey
+          enter_queue_number: הכנס מספר תור שלך
+          submit: התחל שאלון
       instructions:
-        how_to_take_survey: How to take a DoctorQ Survey!
+        how_to_take_survey: איך לבצע שאלון של DoctorQ!
         survey_explanation: |
-          This will help Dr. %{name} to examine you faster. Saves queue waiting time.
-          Simply follow the instructions below:
-        step_1: Step 1.
-        enter_to_site_using_one_of_options: Enter DoctorQ Site using one of the options
-        scan_qr_code: Scan QR Code
-        or_use_direct_url_html: Or use direct short URL <mark><b>%{short_url}</b></mark>
+          שאלון זה יעזור לרופא %{name} להבין את הבעיות שלך מהר יותר. יקטין את זמן ההמתנה שלך.
+          להתחלה אתה נדרש לבצע כמה שלבים:
+        step_1: שלב 1.
+        enter_to_site_using_one_of_options: כנס לאתר DoctorQ באחד הדרכים
+        scan_qr_code: שרוק QR Code
+        or_use_direct_url_html: או תשתמש בכתובת מקוצרת <mark><b>%{short_url}</b></mark>
         or_enter_using_link_html: |
-          Or enter our website by using this link <mark><b>http://doctorq.herokuapp.com</b></mark>
-          and use <mark><b>%{doctor_id}</b></mark> as your Doctor Number
-        step_2: Step 2.
-        enter_queue_number: Enter your Queue Number
-        step_3: Step 3.
-        and_press_start_survey_html: And press <mark><b>Start Survey</b></mark> Button
+          או כנס לאתר שלנו בכתובת <mark><b>http://doctorq.herokuapp.com</b></mark>
+          והכנס <mark><b>%{doctor_id}</b></mark> בשדה מספר רופא
+        step_2: שלב 2.
+        enter_queue_number: הכנס מספר תור שלך
+        step_3: שלב 3.
+        and_press_start_survey_html: ולחץ על <mark><b>התחל שאלון</b></mark>
       survey:
-        header: Welcome to Doctor "%{name}" Survey
-        thank_you_for_survey: Thank you for your survey! Doctor will be able to see your answers
+        header: ברוך הבא לשאלון של "%{name}"
+        thank_you_for_survey: תודה על השתתפות בשאלון! רופא ירא תשובות שלך מיד
     devise:
       confirmations:
         new:
-          header: Resend confirmation instructions
+          header: לשלוח הוראות אימות מחדש
           form:
-            submit: Resend confirmation instructions
+            submit: לשלוח הוראות אימות מחדש
       passwords:
         new:
-          header: Forgot your password?
+          header: שכחת סיסמא?
           form:
-            submit: Send me reset password instructions
+            submit: לשלוח הוראת שחזור סיסמא
       registrations:
         edit:
-          header: Edit Profile
+          header: עריכת פרופיל
           form:
-            password_help: Leave blank to keep unchanged
-            submit: Save
+            password_help: השר ריק לשמירה על סיסמא קיימת
+            submit: שמור
         new:
-          header: Sign up
+          header: הרשמה למערכת
           form:
-            password_min_characters: '%{min_characters} characters minimum'
-            submit: Sign up
+            password_min_characters: '%{min_characters} אותיות לפחות'
+            submit: הרשמה
       sessions:
         new:
-          header: Log in
+          header: כניסה למערכת
           form:
-            remember_me: Remember me
-            submit: Log In
+            remember_me: זכור אותי
+            submit: כניסה
       unlocks:
         new:
-          header: Resend unlock instructions
+          header: לשלוח הוראות שיחרור נעילה מחדש
           form:
-            submit: Resend unlock instructions
+            submit: לשלוח הוראות שיחרור נעילה
       links:
-        log_in: Log In
-        sign_up: Sign Up
-        forgot_password: Forgot Password?
-        didnt_receive_confirmation: Didn't receive confirmation instructions?
-        didnt_receive_unlock: Didn't receive unlock instructions?
+        log_in: כניסה למערכת
+        sign_up: הרשמה למערכת
+        forgot_password: שכחת סיסמא?
+        didnt_receive_confirmation: לא קיבלת הוראות אימות דוא"ל?
+        didnt_receive_unlock: לא קיבלת הוראות שיחרור חשבון?
 
   mails:
     devise:
-      hello_doctor: Dear Dr. %{name}
+      hello_doctor: שלום, %{name}
       confirmation_instructions:
-        welcome: Welcome %{email}!
-        you_can_confirm: You can confirm your account email through the link below
-        confirm_link: Confirm my account
+        welcome: שלום %{email}!
+        you_can_confirm: אתה יכול לאשר את הדוא"ל של החשבון שלך דרך הקישור הבא
+        confirm_link: אימות דוא"ל
       reset_password:
-        someone_has_requested_link_to_change_password: Someone has requested a link to change your password. You can do this through the link below.
-        change_password_link: Change my password
-        if_you_didnt_requested: If you didn't request this, please ignore this email.
-        your_password_wont_change: Your password won't change until you access the link above and create a new one.
+        someone_has_requested_link_to_change_password: מישהו ביקש קישור לשנות את הסיסמה שלך. אתה יכול לעשות את זה דרך הקישור הבא.
+        change_password_link: שנא סיסמא
+        if_you_didnt_requested: אם לא ביקשתא, תתעלם מאימייל הזה
+        your_password_wont_change: סיסמה שלך לא תשתנה עד שאתה לא תעבור לקישור ותצור סיסמא חדשה.
       unlock:
-        your_account_was_locked: Your account has been locked due to an excessive number of unsuccessful sign in attempts.
-        click_link_below_to_unlock: Click the link below to unlock your account
-        unlock_link: Unlock my account
+        your_account_was_locked: ון שלך ננעל עקב מספר ניסיונות שגוייות.
+        click_link_below_to_unlock: תעבור לקישור כדי לשחרר נעילה
+        unlock_link: שחרר נעילה
