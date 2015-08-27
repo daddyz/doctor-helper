@@ -22,6 +22,6 @@ class Question < ActiveRecord::Base
 
   def body
     text = send("body_#{I18n.locale}")
-    text.empty? ? body_en : text
+    text.nil? || text.empty? ? body_en : text
   end
 end
