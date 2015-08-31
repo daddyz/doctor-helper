@@ -12,7 +12,7 @@ development:
 
 test: &test
   <<: *defaults
-  database: userportal_test
+  database: doctors_test
 
 production:
   adapter: postgresql

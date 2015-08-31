@@ -28,8 +28,9 @@ class HomeController < ApplicationController
   def survey_step
     if params[:a] != '0'
       session[:survey]['answers'][params[:q]] = params[:a]
+      already_answered = session[:survey]['answers'].keys.map(&:to_i)
       session[:survey]['questions'] +=
-          AnswerFollowup.following_questions(params[:a])
+          AnswerFollowup.following_questions(params[:a]) - already_answered
       session[:survey]['questions'].uniq!
     end
 
