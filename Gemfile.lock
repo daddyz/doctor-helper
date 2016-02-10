@@ -130,7 +130,7 @@ GEM
     multi_json (1.11.1)
     multi_xml (0.5.5)
     orm_adapter (0.5.0)
-    pg (0.14.1)
+    pg (0.18.4)
     phonelib (0.5.5)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
