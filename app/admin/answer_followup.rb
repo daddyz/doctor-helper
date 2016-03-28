@@ -19,7 +19,7 @@ ActiveAdmin.register AnswerFollowup do
 
   form do |f|
     f.inputs "Answer to Question \"#{f.object.answer.question.to_s}\" Relations" do
-      f.input :answer, collection: f.object.answer.question.answers, selected: f.object.question_ids, include_blank: false
+      f.input :answer, collection: f.object.answer.question.answers, selected: f.object.answer_id, include_blank: false
       f.input :question_ids, as: :check_boxes, collection: Question.where('id != ?', f.object.answer.question.id)
       actions
     end
