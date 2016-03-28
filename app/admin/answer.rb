@@ -32,7 +32,12 @@ ActiveAdmin.register Answer do
   end
 
   action_item only: :show do
-    link_to 'Link to Questions', new_admin_answer_followup_path(answer_followup: { answer_id: resource.id })
+    followup = AnswerFollowup.where(answer_id: resource.id).first
+    if followup
+      link_to 'Link to Questions', edit_admin_answer_followup_path(followup)
+    else
+      link_to 'Link to Questions', new_admin_answer_followup_path(answer_followup: { answer_id: resource.id })
+    end
   end
 # permit_params do
 #   permitted = [:permitted, :attributes]
